@@ -2,15 +2,23 @@
 <html>
   <head>
     <title>Financial Times</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet"
+	      href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.0.0" />
   </head>
   <body>
-    <h1>FINANCIAL TIMES</h1>
-      <% titles.forEach(function(title) { %>
-        <div class="articles">
-          <%= title %>
-        </div>
-      <% }); %>
-    <br />
+    <div class="container">
+      <span id="logo">FINANCIAL TIMES</span>
+      <div class="articles-container">
+        <% titles.forEach(function(title, i) { %>
+          <div id="1" class="article">
+            <%= title %>
+          </div>
+        <% }); %>
+      </div>
+    </div>
   </body>
 </html>

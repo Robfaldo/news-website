@@ -1,0 +1,23 @@
+html {
+  background-color: #f2dfce;
+}
+
+#logo {
+  font-size: 50px;
+  text-align: center;
+  display: block;
+}
+
+.articles-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.articles-container div{
+  border: 1px #ccc solid;
+  padding: 10px;
+}
+
+.article {
+  flex:4;
+}
