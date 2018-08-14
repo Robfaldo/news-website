@@ -23,10 +23,10 @@ app.get('/', (req, res) => {
     }
     })
   .then(response => {
-    allResponses = response.data.results[0].results
-    const justTitles = allResponses.map( result => result.title.title )
+    apiResponse = response.data.results[0].results
+    console.log(apiResponse)
     res.render('index', {
-      titles: justTitles
+      title: apiResponse,
     })
   })
   .catch(error => {

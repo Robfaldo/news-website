@@ -13,9 +13,9 @@
     <div class="container">
       <span id="logo">FINANCIAL TIMES</span>
       <div class="articles-container">
-        <% titles.forEach(function(title, i) { %>
-          <div id="1" class="article">
-            <%= title %>
+        <% title.forEach(function(article) { %>
+          <div class="article">
+            <a href=<%= article.location.uri %>> <%= article.title.title %> </a>
           </div>
         <% }); %>
       </div>
