@@ -20,4 +20,5 @@ html {
 
 .article {
   flex:4;
+  margin: 5px;
 }
