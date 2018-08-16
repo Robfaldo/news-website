@@ -2,13 +2,13 @@ const express = require('express')
 const app = express();
 const axios = require('axios');
 var path = require('path');
-var ftApiQuery = require('./services/ftApiCaller');
+var ApiService = require('./services/apiService');
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', async (req, res) => {
-  const articles = await ftApiQuery({queryString: ""})
+  const articles = await ApiService.requestData({queryString: ""})
   res.render('index', {
     articles: articles,
   })
