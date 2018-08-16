@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
       'Content-Type': 'application/json'
     },
     data: {
-      "queryString": "banks",
+      "queryString": "",
       "resultContext" : {
          "aspects" :[  "title","lifecycle","location","summary","editorial" ]
        }
