@@ -17,6 +17,32 @@ html {
   margin-bottom: 15px;
 }
 
+#header-search-container {
+  background-color: #ccc1b7;
+}
+
+#search-container {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#search {
+  border: #00FFFF solid 2px;
+  width: 70%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#search-submit {
+  background-color: #000;
+  color: #FFF;
+  padding: 7px 5px 7px 5px;
+}
+
 #footer {
   background-color: #33302e;
   text-align: center;
