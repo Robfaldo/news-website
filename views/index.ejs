@@ -11,8 +11,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
+
+    <header>
+      <%- include ./partials/_header.ejs %>
+    </header>
+
     <div class="container">
-      <span id="logo">FINANCIAL TIMES</span>
       <form class="search-container">
         <label for="search-text"></label><input type="text" placeholder="Search.." id="search">
         <button type="button"><i class="search-submit" onclick="search()">Search</i></button>
@@ -25,6 +29,11 @@
         <% }); %>
       </div>
     </div>
-    <script src="/js/script.js"></script>
-  </body>
+
+    <footer>
+      <%- include ./partials/_footer.ejs %>
+    <footer>
+
+  <script src="/js/script.js"></script>
+</body>
 </html>
