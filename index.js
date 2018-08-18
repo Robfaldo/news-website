@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
 app.get('/search', async (req, res) => {
   const queryString = req.headers.querystring
   const articles = await ApiService.requestData({queryString: queryString})
+  console.log(articles)
   res.send(articles)
 });
 

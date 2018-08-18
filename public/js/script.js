@@ -8,9 +8,9 @@ function search() {
       url: '/search',
       success: function(data) {
         $( ".articles-container" ).empty();
-        data.forEach(function(article){
+        data.forEach(function(article, i){
           $(".articles-container").append(
-            `<div class="article">${article.title.title}</div>`
+            `<div id="article-${i + 1}" class="article"><a href=${article.location.uri}>${article.title.title}</a></div>`
           )
         });
       }

@@ -1,13 +1,11 @@
 context('User enters a search', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:8080/')
-  })
+  let stubbedArticlesFromSearch;
 
-  it('shows the articles from that search', () => {
-    const stubbedArticlesFromSearch = [
-      {location: "fakeLocation1", uri: "fakeUri1", title: {title: "fakeTitle1"}},
-      {location: "fakeLocation2", uri: "fakeUri2", title: {title: "fakeTitle2"}},
-      {location: "fakeLocation3", uri: "fakeUri3", title: {title: "fakeTitle3"}}
+  beforeEach(() => {
+    stubbedArticlesFromSearch = [
+      {location: { uri: "fakeUri1" }, title: {title: "fakeTitle1"}},
+      {location: { uri: "fakeUri2" }, title: {title: "fakeTitle2"}},
+      {location: { uri: "fakeUri3" }, title: {title: "fakeTitle3"}}
     ]
     cy.server();
     cy.route({
@@ -15,7 +13,10 @@ context('User enters a search', () => {
       url: '/search',
       response: stubbedArticlesFromSearch
     });
+    cy.visit('http://localhost:8080/')
+  })
 
+  it('shows the articles from that search', () => {
     cy.get('#search')
       .type('Example search query');
     cy.get('.search-submit').click();
@@ -23,5 +24,14 @@ context('User enters a search', () => {
     cy.contains('fakeTitle1');
     cy.contains('fakeTitle2');
     cy.contains('fakeTitle3');
-  })
+  });
+
+  it('articles are hyperlinked to article uri', () => {
+    cy.get('#search')
+      .type('Example search query');
+    cy.get('.search-submit').click();
+
+    cy.get('#article-1 > a')
+      .should('have.attr', 'href', 'fakeUri1')
+  });
 })
