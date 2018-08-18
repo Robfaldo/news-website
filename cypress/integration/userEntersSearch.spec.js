@@ -19,7 +19,7 @@ context('User enters a search', () => {
   it('shows the articles from that search', () => {
     cy.get('#search')
       .type('Example search query');
-    cy.get('.search-submit').click();
+    cy.get('#search-submit').click();
 
     cy.contains('fakeTitle1');
     cy.contains('fakeTitle2');
@@ -29,7 +29,7 @@ context('User enters a search', () => {
   it('articles are hyperlinked to article uri', () => {
     cy.get('#search')
       .type('Example search query');
-    cy.get('.search-submit').click();
+    cy.get('#search-submit').click();
 
     cy.get('#article-1 > a')
       .should('have.attr', 'href', 'fakeUri1')
