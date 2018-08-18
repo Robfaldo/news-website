@@ -9,6 +9,12 @@ html {
 .container {
   width: 70%;
   margin: 0 auto;
+  font-family: FinancierDisplayWeb, serif;
+}
+
+a {
+  color: #66605c;
+  text-decoration: none;
 }
 
 #page-header {
