@@ -14,6 +14,12 @@ app.get('/', async (req, res) => {
   })
 });
 
+app.get('/search', async (req, res) => {
+  const queryString = req.headers.querystring
+  const articles = await ApiService.requestData({queryString: queryString})
+  res.send(articles)
+});
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log('Listening on port 8080!')

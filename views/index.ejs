@@ -8,10 +8,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet"
 	      href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.0.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
       <span id="logo">FINANCIAL TIMES</span>
+      <form class="search-container">
+        <label for="search-text"></label><input type="text" placeholder="Search.." id="search">
+        <button type="button"><i class="search-submit" onclick="search()">Search</i></button>
+      </form>
       <div class="articles-container">
         <% articles.forEach(function(article) { %>
           <div class="article">
@@ -20,5 +25,6 @@
         <% }); %>
       </div>
     </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>

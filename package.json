@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit",
-    "start": "node index.js"
+    "test": "mocha --exit --recursive",
+    "start": "node index.js",
+    "cypress":"./node_modules/.bin/cypress open"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "cypress": "^3.1.0",
     "mocha": "^5.2.0",
     "sinon": "^6.1.5",
     "supertest": "^3.1.0"
