@@ -1,7 +1,10 @@
 html {
   background-color: #f2dfce;
 }
-
+#page-header {
+  background-color: #33302e;
+  height: 20px;
+}
 #top-logo {
   text-align: center;
 }
