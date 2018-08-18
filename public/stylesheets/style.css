@@ -2,6 +2,10 @@ html {
   background-color: #f2dfce;
 }
 
+#top-logo {
+  text-align: center;
+}
+
 #logo {
   width: 50%;
   height: 40px;
@@ -9,8 +13,33 @@ html {
   margin-bottom: 30px;
 }
 
-#top-logo {
+#footer {
+  background-color: #33302e;
   text-align: center;
+}
+
+#legal-info {
+  color: #a8aaad;
+  font-family: MetricWeb, sans-serif;
+  font-size: 10px;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#footer-brand {
+  background-color: #000;
+}
+
+#brand-logo {
+  background-color: #000;
+  color: white;
+  font-family: MetricWeb, sans-serif;
+  font-size: 16px;
+  margin-left: 70%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .articles-container {
