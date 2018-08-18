@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit --recursive",
+    "test": "nyc mocha --exit --recursive",
     "start": "node index.js",
     "cypress": "./node_modules/.bin/cypress open"
   },
@@ -18,7 +18,9 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "cypress": "^3.1.0",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
     "sinon": "^6.1.5",
     "supertest": "^3.1.0"
   }
