@@ -20,7 +20,12 @@
       <div class="articles-container">
         <% articles.forEach(function(article) { %>
           <div class="article">
-            <a href=<%= article.location.uri %>> <%= article.title.title %> </a>
+            <div class="article-title">
+              <a href=<%= article.location.uri %>> <%= article.title.title %> </a>
+            </div>
+            <div class="article-summary">
+              <%= article.summary.excerpt %>
+            </div>
           </div>
         <% }); %>
       </div>

@@ -7,13 +7,13 @@ context('User enters a search', () => {
       {location: { uri: "fakeUri2" }, title: {title: "fakeTitle2"}},
       {location: { uri: "fakeUri3" }, title: {title: "fakeTitle3"}}
     ]
+    cy.visit('localhost:8080')
     cy.server();
     cy.route({
       method: 'GET',
       url: '/search',
       response: stubbedArticlesFromSearch
     });
-    cy.visit('http://localhost:8080/')
   })
 
   it('shows the articles from that search', () => {
