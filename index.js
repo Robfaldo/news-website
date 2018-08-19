@@ -8,13 +8,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 var homePageRouter = require('./routes/homepage.js');
+var searchRouter = require('./routes/search.js');
 app.use('/', homePageRouter);
-
-app.get('/search', async (req, res) => {
-  const queryString = req.headers.querystring
-  const articles = await ApiService.requestData({queryString: queryString});
-  res.send(articles);
-});
+app.get('/search', searchRouter);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
