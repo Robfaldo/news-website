@@ -1,13 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var ApiService = require('../services/apiService');
+const express = require('express');
+const ApiService = require('../services/apiService');
+
+const router = express.Router();
 
 router.get('/search', async (req, res) => {
-  const queryString = req.query.querystring
-  const articles = await ApiService.requestData({queryString: queryString});
+  const queryFromSearch = req.query.querystring;
+  const articlesFromApi = await ApiService.requestData({ queryString: queryFromSearch });
   res.render('index', {
-    articles: articles,
-  })
+    articles: articlesFromApi,
+  });
 });
 
 module.exports = router;
