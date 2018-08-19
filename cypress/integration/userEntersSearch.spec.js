@@ -14,23 +14,18 @@ context('User enters a search', () => {
       url: '/search',
       response: stubbedArticlesFromSearch
     });
-  })
-
-  it('shows the articles from that search', () => {
     cy.get('#search')
       .type('Example search query');
     cy.get('#search-submit').click();
+  })
 
+  it('shows the articles from that search', () => {
     cy.contains('fakeTitle1');
     cy.contains('fakeTitle2');
     cy.contains('fakeTitle3');
   });
 
   it('articles are hyperlinked to article uri', () => {
-    cy.get('#search')
-      .type('Example search query');
-    cy.get('#search-submit').click();
-
     cy.get('#article-1 > a')
       .should('have.attr', 'href', 'fakeUri1')
   });
