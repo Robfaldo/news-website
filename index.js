@@ -1,14 +1,14 @@
-const express = require('express')
+const express = require('express');
+const path = require('path');
+
 const app = express();
-const axios = require('axios');
-var path = require('path');
-var ApiService = require('./services/apiService');
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-var homePageRouter = require('./routes/homepage.js');
-var searchRouter = require('./routes/search.js');
+const homePageRouter = require('./routes/homepage.js');
+const searchRouter = require('./routes/search.js');
+
 app.use('/', homePageRouter);
 app.get('/search', searchRouter);
 
