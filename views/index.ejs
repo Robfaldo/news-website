@@ -19,16 +19,20 @@
 
     <div class="container">
       <div class="articles-container">
-        <% articles.forEach(function(article, i) { %>
-          <div class=article>
-            <div class="article-title" id=<%= `article-${i}` %>>
-              <a href=<%= article.location.uri %>> <%= article.title.title %> </a>
+        <% if (articles != undefined) { %>
+          <% articles.forEach(function(article, i) { %>
+            <div class=article>
+              <div class="article-title" id=<%= `article-${i}` %>>
+                <a href=<%= article.location.uri %>> <%= article.title.title %> </a>
+              </div>
+              <div class="article-summary">
+                <%= article.summary.excerpt %>
+              </div>
             </div>
-            <div class="article-summary">
-              <%= article.summary.excerpt %>
-            </div>
-          </div>
-        <% }); %>
+          <% }); %>
+        <% }  else { %>
+          <div class="no-results-message"> No matching results. Please try another search </div>
+        <% } %>
       </div>
     </div>
 
