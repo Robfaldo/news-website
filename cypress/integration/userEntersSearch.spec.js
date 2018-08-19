@@ -14,24 +14,38 @@ context('User enters a search', () => {
       url: '/search',
       response: stubbedArticlesFromSearch
     });
-    cy.get('#search')
-      .type('Example search query');
-    cy.get('#search-submit').click();
   })
 
-  it('shows the articles from that search', () => {
-    cy.contains('fakeTitle1');
-    cy.contains('fakeTitle2');
-    cy.contains('fakeTitle3');
+  describe('User clicks the search button', () => {
+    beforeEach(() => {
+      cy.get('#search')
+        .type('Example search query');
+      cy.get('#search-submit').click();
+    });
+
+    it('shows the articles from that search', () => {
+      cy.contains('fakeTitle1');
+      cy.contains('fakeTitle2');
+      cy.contains('fakeTitle3');
+    });
+
+    it('articles are hyperlinked to article uri', () => {
+      cy.get('#article-1 > a')
+        .should('have.attr', 'href', 'fakeUri1')
+    });
+
+    it('articles have summaries', () => {
+      cy.get('div.article').children('.article-summary')
+        .its('length').should('not.eq', 0)
+    });
   });
 
-  it('articles are hyperlinked to article uri', () => {
-    cy.get('#article-1 > a')
-      .should('have.attr', 'href', 'fakeUri1')
-  });
-
-  it('articles have summaries', () => {
-    cy.get('div.article').children('.article-summary')
-      .its('length').should('not.eq', 0)
+  describe('User hits enter in the search bar', () => {
+    it('performs the search', () => {
+      cy.get('#search')
+        .type('Example search query')
+        .type('{enter}');
+      cy.contains('fakeTitle1');      
+    });
   });
 })
