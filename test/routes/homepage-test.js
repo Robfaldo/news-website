@@ -1,7 +1,7 @@
 const {assert} = require('chai');
 const sinon = require('sinon');
 const request = require('supertest');
-const app = require('../../index');
+const app = require('../../app');
 const server = require('../../services/apiService.js')
 
 describe('Server path /', () => {
