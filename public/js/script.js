@@ -11,7 +11,14 @@ $(document).ready(() => {
           $( ".articles-container" ).empty();
           data.forEach(function(article, i){
             $(".articles-container").append(
-              `<div id="article-${i + 1}" class="article"><a href=${article.location.uri}>${article.title.title}</a></div>`
+              `<div class="article">
+                <div id="article-${i + 1}" class="article-title">
+                  <a href=${article.location.uri}>${article.title.title}</a>
+                </div>
+                <div class="article-summary">
+                  ${article.summary.excerpt}
+                </div>
+              </div>`
             )
           });
         }

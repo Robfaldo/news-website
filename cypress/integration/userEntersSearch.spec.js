@@ -3,9 +3,9 @@ context('User enters a search', () => {
 
   beforeEach(() => {
     stubbedArticlesFromSearch = [
-      {location: { uri: "fakeUri1" }, title: {title: "fakeTitle1"}},
-      {location: { uri: "fakeUri2" }, title: {title: "fakeTitle2"}},
-      {location: { uri: "fakeUri3" }, title: {title: "fakeTitle3"}}
+      {location: { uri: "fakeUri1" }, title: {title: "fakeTitle1"}, summary: { excerpt: "fakeExcerpt"}},
+      {location: { uri: "fakeUri2" }, title: {title: "fakeTitle2"}, summary: { excerpt: "fakeExcerpt"}},
+      {location: { uri: "fakeUri3" }, title: {title: "fakeTitle3"}, summary: { excerpt: "fakeExcerpt"}}
     ]
     cy.visit('localhost:8080')
     cy.server();
@@ -28,5 +28,10 @@ context('User enters a search', () => {
   it('articles are hyperlinked to article uri', () => {
     cy.get('#article-1 > a')
       .should('have.attr', 'href', 'fakeUri1')
+  });
+
+  it('articles have summaries', () => {
+    cy.get('div.article').children('.article-summary')
+      .its('length').should('not.eq', 0)
   });
 })
