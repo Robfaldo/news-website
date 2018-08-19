@@ -6,12 +6,6 @@ html {
   background-color: #fff1e5;
 }
 
-.container {
-  width: 60%;
-  margin: 0 auto;
-  font-family: FinancierDisplayWeb, serif;
-}
-
 a {
   color: #66605c;
   text-decoration: none;
@@ -88,9 +82,17 @@ a {
   padding-bottom: 10px;
 }
 
+.container {
+  width: 60%;
+  margin: 0 auto;
+  font-family: FinancierDisplayWeb, serif;
+}
+
 .articles-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+
 }
 
 .articles-container div{
