@@ -8,7 +8,13 @@ describe('Server path /', () => {
   let apiStub;
 
   beforeEach(() => {
-    const fakeResponse = [{location: "fakeLocation", uri: "fakeUri", title: {title: "fakeTitle"}}];
+    const fakeResponse = [
+      {
+        location: { uri: "fakeUri" },
+        title: { title: "fakeTitle" },
+        summary: { excerpt: "fakeExcerpt" }
+      }
+    ];
     apiStub = sinon.stub(server, 'requestData').resolves(fakeResponse);
   });
 

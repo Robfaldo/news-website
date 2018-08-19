@@ -9,9 +9,9 @@
 </div>
 <div id="header-search-container">
   <div id="search-container">
-    <form class="search-container">
-      <input type="text" placeholder="Search.." id="search" aria-label="search-box">
-      <button type="button" id="search-submit"><label aria-label="search-button-submit"></label>Search</button>
+    <form class="search-container" action="/search" method="get" id="search-form">
+      <input type="text" placeholder="Search.." id="search" aria-label="search-box" name="querystring"></input>
+      <input type="submit" id="search-submit" value="Search" aria-label="search-button-submit"></input>
     </form>
   </div>
 </div>

@@ -8,7 +8,13 @@ describe('Server path /search', () => {
   let apiStub;
 
   beforeEach(() => {
-    const fakeResponse = [{location: "fakeLocation", uri: "fakeUri", title: {title: "fakeTitle"}}];
+    const fakeResponse = [
+      {
+        location: { uri: "fakeUri" },
+        title: { title: "fakeTitle" },
+        summary: { excerpt: "fakeExcerpt" }
+      }
+    ];
     apiStub = sinon.stub(server, 'requestData').resolves(fakeResponse);
   });
 
@@ -18,10 +24,9 @@ describe('Server path /search', () => {
 
   describe('GET', () => {
     it('requests data from the API with the specified query', async () => {
-      const queryString = "Example query"
+      const queryString = "TestQuery"
       await request(app)
-        .get('/search')
-        .set('querystring', queryString);
+        .get(`/search?querystring=${queryString}`)
       assert.equal(apiStub.withArgs({queryString: queryString}).calledOnce, true);
     });
   });
