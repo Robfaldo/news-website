@@ -3,11 +3,11 @@ body {
 }
 
 html {
-  background-color: #f2dfce;
+  background-color: #fff1e5;
 }
 
 .container {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   font-family: FinancierDisplayWeb, serif;
 }
@@ -94,11 +94,23 @@ a {
 }
 
 .articles-container div{
-  border: 1px #ccc solid;
   padding: 10px;
 }
 
 .article {
-  flex:4;
   margin: 5px;
+  width: 150px;
+  background-color: #f2dfce;
+}
+
+.article-title {
+  color: #33302e;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: FinancierDisplayWeb, sans-serif;
+}
+
+.article-summary {
+  font-size: 12px;
+  font-family: MetricWeb, serif;
 }
