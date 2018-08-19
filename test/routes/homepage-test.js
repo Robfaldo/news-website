@@ -1,8 +1,8 @@
-const {assert} = require('chai');
+const { assert } = require('chai');
 const sinon = require('sinon');
 const request = require('supertest');
 const app = require('../../app');
-const server = require('../../services/apiService.js')
+const server = require('../../services/apiService.js');
 
 describe('Server path /', () => {
   let apiStub;
@@ -10,10 +10,10 @@ describe('Server path /', () => {
   beforeEach(() => {
     const fakeResponse = [
       {
-        location: { uri: "fakeUri" },
-        title: { title: "fakeTitle" },
-        summary: { excerpt: "fakeExcerpt" }
-      }
+        location: { uri: 'fakeUri' },
+        title: { title: 'fakeTitle' },
+        summary: { excerpt: 'fakeExcerpt' },
+      },
     ];
     apiStub = sinon.stub(server, 'requestData').resolves(fakeResponse);
   });
@@ -25,7 +25,7 @@ describe('Server path /', () => {
   describe('GET', () => {
     it('requests data from the API', async () => {
       await request(app).get('/');
-      assert.equal(apiStub.withArgs({queryString: ""}).calledOnce, true);
+      assert.equal(apiStub.withArgs({ queryString: '' }).calledOnce, true);
     });
   });
 });

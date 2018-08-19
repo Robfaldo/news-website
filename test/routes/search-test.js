@@ -1,8 +1,8 @@
-const {assert} = require('chai');
+const { assert } = require('chai');
 const sinon = require('sinon');
 const request = require('supertest');
 const app = require('../../app');
-const server = require('../../services/apiService.js')
+const server = require('../../services/apiService.js');
 
 describe('Server path /search', () => {
   describe('GET', () => {
@@ -12,10 +12,10 @@ describe('Server path /search', () => {
       beforeEach(() => {
         const fakeResponse = [
           {
-            location: { uri: "fakeUri" },
-            title: { title: "fakeTitle" },
-            summary: { excerpt: "fakeExcerpt" }
-          }
+            location: { uri: 'fakeUri' },
+            title: { title: 'fakeTitle' },
+            summary: { excerpt: 'fakeExcerpt' },
+          },
         ];
         apiStub = sinon.stub(server, 'requestData').resolves(fakeResponse);
       });
@@ -25,10 +25,10 @@ describe('Server path /search', () => {
       });
 
       it('requests data from the API with the specified query', async () => {
-        const queryString = "TestQuery"
+        const testQueryString = 'TestQuery';
         await request(app)
-          .get(`/search?querystring=${queryString}`)
-        assert.equal(apiStub.withArgs({queryString: queryString}).calledOnce, true);
+          .get(`/search?querystring=${testQueryString}`);
+        assert.equal(apiStub.withArgs({ queryString: testQueryString }).calledOnce, true);
       });
     });
 
@@ -41,10 +41,10 @@ describe('Server path /search', () => {
         sinon.restore();
       });
       it('returns a div with no search results message', async () => {
-        const expectedDivElement = '<div class="no-results-message"> No matching results. Please try another search </div>'
-        const queryString = "TestQuery"
+        const expectedDivElement = '<div class="no-results-message"> No matching results. Please try another search </div>';
+        const queryString = 'TestQuery';
         const response = await request(app)
-          .get(`/search?querystring=${queryString}`)
+          .get(`/search?querystring=${queryString}`);
 
         assert.include(response.text, expectedDivElement);
       });
