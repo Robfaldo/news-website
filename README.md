@@ -1,9 +1,9 @@
-#Financial Times Tech Test
+Financial Times Tech Test
 ==================
 
  ![Alt text](https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?source=o-header&amp;tint=%2333302E,%2333302E&amp;format=svg)
 
-Heroku link: https://robert-faldo-ft.herokuapp.com/
+__Heroku__ link: https://robert-faldo-ft.herokuapp.com/
 
 ## Instructions:  
 
@@ -55,6 +55,11 @@ As a user,
 So that I can find information specific to my interests,
 I can search for information
 ```
+```
+As a user,
+So that I know more about the article before clicking it,
+I can see the news summary
+```
 
 ## Getting started
 
@@ -79,15 +84,14 @@ It is deployed and you can use it at Heroku link: https://robert-faldo-ft.heroku
 
 ## Tech/Framework used
 
-* __JavaScript__
-* __Node.js__
-* __Express__ framework
-* __Heroku__
-* __EJS__ view engine
-* __ESLint__
-
-* __Trello__ (for kanban style workflow)
-* __Balsamiq__ (for wireframing mockups)
+- __JavaScript__
+- __Node.js__ (v9.0.0)
+- __Express__ framework (5.5.1)
+- __Heroku__
+- __EJS__ view engine
+- __ESLint__
+- __Trello__ (for kanban style workflow)
+- __Balsamiq__ (for wireframing mockups)
 
 ## Challenges
 
