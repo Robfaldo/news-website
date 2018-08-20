@@ -2,7 +2,7 @@ const { assert } = require('chai');
 const sinon = require('sinon');
 const request = require('supertest');
 const app = require('../../app');
-const server = require('../../services/apiService.js');
+const ApiService = require('../../services/apiService.js');
 
 describe('Server path /search', () => {
   describe('GET', () => {
@@ -17,7 +17,7 @@ describe('Server path /search', () => {
             summary: { excerpt: 'fakeExcerpt' },
           },
         ];
-        apiStub = sinon.stub(server, 'requestData').resolves(fakeResponse);
+        apiStub = sinon.stub(ApiService, 'requestData').resolves(fakeResponse);
       });
 
       afterEach(() => {
@@ -34,7 +34,7 @@ describe('Server path /search', () => {
 
     describe('When search is unsuccessful and does not return articles', () => {
       beforeEach(() => {
-        apiStub = sinon.stub(server, 'requestData').resolves(undefined);
+        apiStub = sinon.stub(ApiService, 'requestData').resolves(undefined);
       });
 
       afterEach(() => {
